@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+5.times do
+    Ticket.create(
+        name: Faker::Name.unique.name,
+        common_issues: Faker::Verb.simple_present,
+        devices: Faker::Appliance.equipment,
+        description: Faker::Quote.jack_handey
+    )
+end

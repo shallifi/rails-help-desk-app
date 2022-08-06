@@ -44,6 +44,9 @@ end
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   gem "spring"
+  # Used to generate seed data
+  # https://github.com/faker-ruby/faker
+  gem "faker", "~> 2.21.0"
 end
 
 
