@@ -24,3 +24,7 @@ end
 #         phone: Faker::PhoneNumber.cell_phone 
 #     )
 # end
+
+tech1 = Tech.create(username: "saitama", email: "saibogus@gmail.com")
+tech2 = Tech.create(username: "protaganist", email: "probogus@gmail.com")
+tech3 = Tech.create(username: "deku", email: "dekubogus@gmail.com")
