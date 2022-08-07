@@ -14,3 +14,13 @@
         description: Faker::Quote.jack_handey
     )
 end
+
+# 5.times do
+#     Employee.create(
+#         name:Faker::Name.unique.name,
+#         department:Faker::Educator.subject, 
+#         manager: Faker::Name.unique.name,
+#         title: Faker::Verb.simple_present,
+#         phone: Faker::PhoneNumber.cell_phone 
+#     )
+# end

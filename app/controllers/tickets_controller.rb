@@ -2,7 +2,7 @@ class TicketsController < ApplicationController
 
     def index 
         tickets = Ticket.all
-        render json:  tickets
+        render json: tickets
     end
 
     def show
@@ -30,6 +30,7 @@ class TicketsController < ApplicationController
     end 
     
     private 
+
     def ticket_params
         params.permit(:common_issues, :devices, :description, :name)
     end 
