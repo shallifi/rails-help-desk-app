@@ -1,5 +1,5 @@
 class TicketsController < ApplicationController
-
+    # skip_before_action :authorize, only: [:index]
     def index 
         tickets = Ticket.all
         render json: tickets
@@ -17,22 +17,26 @@ class TicketsController < ApplicationController
 
     
     def update
-        ticket = Ticket.find(params[:id])
+        ticket = find_ticket
         ticket.update!(ticket_params)
-        render json: ticket, status: :ok
+        render json: ticket, status: :accepted
     end 
 
 
     def destroy
-        ticket = Ticket.find(params[:id])
+        ticket = find_ticket
         ticket.destroy
         head :no_content
     end 
     
     private 
 
+    def find_ticket
+        Ticket.find_by(id: params[:id])
+    end
+
     def ticket_params
-        params.permit(:common_issues, :devices, :description, :name)
+        params.permit(:name, :common_issues, :devices, :description)
     end 
 
 end

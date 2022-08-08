@@ -1,5 +1,5 @@
 class TechesController < ApplicationController
-    skip_before_action :authorize, only: :create
+    # skip_before_action :authorize, only: :create
 
     def index 
         tech = Tech.all
@@ -13,13 +13,14 @@ class TechesController < ApplicationController
     end
 
     def show
+        tech = Tech.find(session[:tech_id])
         render json: @current_tech
     end
 
     private
 
     def tech_params
-        params.permit(:username, :password, :password_confirmation)
+        params.permit(:username, :email, :password, :password_confirmation)
     end
 
 end

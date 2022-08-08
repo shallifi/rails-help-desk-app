@@ -6,14 +6,14 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-5.times do
-    Ticket.create(
-        name: Faker::Name.unique.name,
-        common_issues: Faker::Verb.simple_present,
-        devices: Faker::Appliance.equipment,
-        description: Faker::Quote.jack_handey
-    )
-end
+# 5.times do
+#     Ticket.create(
+#         name: Faker::Name.unique.name,
+#         common_issues: Faker::Verb.simple_present,
+#         devices: Faker::Appliance.equipment,
+#         description: Faker::Quote.jack_handey
+#     )
+# end
 
 # 5.times do
 #     Employee.create(
@@ -25,6 +25,6 @@ end
 #     )
 # end
 
-tech1 = Tech.create(username: "saitama", email: "saibogus@gmail.com")
-tech2 = Tech.create(username: "protaganist", email: "probogus@gmail.com")
-tech3 = Tech.create(username: "deku", email: "dekubogus@gmail.com")
+# tech1 = Tech.create(username: "saitama",password: "onepunchm4n" email: "saibogus@gmail.com")
+# tech2 = Tech.create(username: "protaganist", email: "probogus@gmail.com")
+# tech3 = Tech.create(username: "deku", email: "dekubogus@gmail.com")
