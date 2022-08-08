@@ -1,5 +1,5 @@
 class TicketsController < ApplicationController
-    # skip_before_action :authorize, only: [:index]
+    # before_action :authorize
     def index 
         tickets = Ticket.all
         render json: tickets

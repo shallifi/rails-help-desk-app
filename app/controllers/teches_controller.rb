@@ -1,5 +1,5 @@
 class TechesController < ApplicationController
-    # skip_before_action :authorize, only: :create
+    skip_before_action :authorize, only: [:create, :index]
 
     def index 
         tech = Tech.all
@@ -13,7 +13,7 @@ class TechesController < ApplicationController
     end
 
     def show
-        tech = Tech.find(session[:tech_id])
+        # tech = Tech.find(session[:tech_id])
         render json: @current_tech
     end
 
