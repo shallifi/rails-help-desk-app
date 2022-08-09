@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-    # skip_before_action :authorize, only: [:index]
+    skip_before_action :authorize, only: [:create, :index]
     def index 
         employee = Employee.all
         render json:  employee

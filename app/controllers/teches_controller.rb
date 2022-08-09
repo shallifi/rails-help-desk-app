@@ -13,7 +13,7 @@ class TechesController < ApplicationController
     end
 
     def show
-        # tech = Tech.find(session[:tech_id])
+        tech = Tech.find(session[:tech_id])
         render json: @current_tech
     end
 
