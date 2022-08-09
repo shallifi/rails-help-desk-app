@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
       tech = Tech.find_by(username: params[:username])
       if tech&.authenticate(params[:password])
         session[:tech_id] = tech.id
-        byebug
+        # byebug
         render json: tech, status: :ok
       else
         render json: { error: ["Invalid username or password"] }, status: :unauthorized
