@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "/me", to: "teches#show"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+  get "/authorized_user", to: "tickets#index"
   # Defines the root path route ("/")
   # root "articles#index"
   get '/hello', to: 'application#hello_world'

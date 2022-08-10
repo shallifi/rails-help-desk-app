@@ -10,20 +10,22 @@ class ApplicationController < ActionController::API
         render json: { count: session[:count] }
     end
 
-    def current_user
-      Tech.find_by(id: session[:tech_id])
-    end
+    # def current_user
+    #   Tech.find_by(id: session[:tech_id])
+    # end
 
     # def authorized_user
     #     return render json: {error: "Not Authorized"}, status: :unauthorized unless current_user
     # end
   
-    def authorize
-      @current_tech = Tech.find_by(id: session[:tech_id])
-  
-      render json: { error: ["Not authorized"] }, status: :unauthorized unless @current_tech
-    end
     private
+    def authorize
+      # render json: session[:tech_id]
+      @current_tech = Tech.find_by(id: session[:tech_id])
+      
+       render json: { error: ["Not authorized"] }, status: :unauthorized unless @current_tech
+      
+    end
   
   
     def render_unprocessable_entity_response(exception)

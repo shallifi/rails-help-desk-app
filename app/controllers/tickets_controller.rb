@@ -3,6 +3,7 @@ class TicketsController < ApplicationController
     def index 
         tickets = Ticket.all
         render json: tickets
+        # render json: session[:tech_id]
     end
 
     def show
